@@ -11,7 +11,7 @@ class Home{
      * @return string Conteúdo HTML da página Home*/ 
     
     public static function getHome(){
-        return View::render('home');
+        return View::render('pages/home');
     }
 }
 
