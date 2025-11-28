@@ -18,15 +18,24 @@ class View{
      * Método responsável por retornar o conteúdo renderizado de uma view
      * $view é o parametro que ele irá receber, como o propio nome diz, o nome da view
      * @param string $view
+     * @param array $vars (string/numericos) = variaveis
      * @return string
      * */
 
-    public static function render($view){
+    public static function render($view, $vars = []){
         //CONTEÚDO DA VIEW
         $contentView = self::getContentView($view);
 
+        //CHAVE DOS ARRAYS DE VARIAVEIS
+        $keys = array_keys($vars);
+        $keys = array_map(function ($item) {
+            return '{{'.$item.'}}';
+        }, $keys);
+
+
+
         //RETORNA O CONTEÚDO RENDERIZADO
-        return $contentView;
+        return str_replace($keys, array_values($vars), $contentView);
     }
 }
 

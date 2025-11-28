@@ -11,7 +11,10 @@ class Home{
      * @return string Conteúdo HTML da página Home*/ 
     
     public static function getHome(){
-        return View::render('pages/home');
+        return View::render('pages/home',[
+            'name' => 'Israel - Informática',
+            'description' => 'Gente boa demais'
+        ]);
     }
 }
 
