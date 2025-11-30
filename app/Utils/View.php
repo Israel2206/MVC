@@ -32,8 +32,6 @@ class View{
             return '{{'.$item.'}}';
         }, $keys);
 
-
-
         //RETORNA O CONTEÚDO RENDERIZADO
         return str_replace($keys, array_values($vars), $contentView);
     }
